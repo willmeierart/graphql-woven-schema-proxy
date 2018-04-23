@@ -34,7 +34,6 @@ async function run() {
   app.use(cors({ allow: '*' }))
   app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
   app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
-  app.post('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
   app.listen(PORT, () => {
     console.log(`server running on ${PORT}`)
